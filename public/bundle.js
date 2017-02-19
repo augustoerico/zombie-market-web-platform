@@ -26567,6 +26567,16 @@ var ProductsView = __webpack_require__(235);
 var Products = React.createClass({
     displayName: 'Products',
 
+    getInitialState: function getInitialState() {
+        return {
+            products: []
+        };
+    },
+    componentDidMount: function componentDidMount() {
+        this.setState({
+            product: 'Right Hand'
+        });
+    },
     render: function render() {
         return React.createElement(
             'div',
@@ -26576,7 +26586,7 @@ var Products = React.createClass({
                 null,
                 'Products component'
             ),
-            React.createElement(ProductsView, null)
+            React.createElement(ProductsView, { products: this.state.product })
         );
     }
 });
@@ -26595,11 +26605,25 @@ var React = __webpack_require__(7);
 var ProductsView = React.createClass({
     displayName: 'ProductsView',
 
+    getDefaultProps: function getDefaultProps() {
+        return {
+            products: []
+        };
+    },
     render: function render() {
         return React.createElement(
-            'h2',
+            'div',
             null,
-            'ProductsView component'
+            React.createElement(
+                'h2',
+                null,
+                'ProductsView component'
+            ),
+            React.createElement(
+                'div',
+                null,
+                this.props.products
+            )
         );
     }
 });

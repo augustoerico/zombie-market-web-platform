@@ -11937,15 +11937,21 @@ module.exports = ReactPropTypesSecret;
 
 
 var React = __webpack_require__(7);
+var Products = __webpack_require__(234);
 
 var Main = React.createClass({
     displayName: 'Main',
 
     render: function render() {
         return React.createElement(
-            'h1',
+            'div',
             null,
-            'Main component'
+            React.createElement(
+                'h1',
+                null,
+                'Main component'
+            ),
+            React.createElement(Products, null)
         );
     }
 });
@@ -26535,12 +26541,70 @@ var _require = __webpack_require__(111),
     hashHistory = _require.hashHistory;
 
 var Main = __webpack_require__(109);
+var Products = __webpack_require__(234);
 
 ReactDOM.render(React.createElement(
     Router,
     { history: hashHistory },
-    React.createElement(Route, { path: '/', component: Main })
+    React.createElement(
+        Route,
+        { path: '/', component: Main },
+        React.createElement(Route, { path: 'products', component: Products }),
+        React.createElement(IndexRoute, { component: Products })
+    )
 ), document.getElementById('app'));
+
+/***/ }),
+/* 234 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var React = __webpack_require__(7);
+var ProductsView = __webpack_require__(235);
+
+var Products = React.createClass({
+    displayName: 'Products',
+
+    render: function render() {
+        return React.createElement(
+            'div',
+            null,
+            React.createElement(
+                'h2',
+                null,
+                'Products component'
+            ),
+            React.createElement(ProductsView, null)
+        );
+    }
+});
+
+module.exports = Products;
+
+/***/ }),
+/* 235 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var React = __webpack_require__(7);
+
+var ProductsView = React.createClass({
+    displayName: 'ProductsView',
+
+    render: function render() {
+        return React.createElement(
+            'h2',
+            null,
+            'ProductsView component'
+        );
+    }
+});
+
+module.exports = ProductsView;
 
 /***/ })
 /******/ ]);

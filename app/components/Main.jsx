@@ -1,9 +1,13 @@
 var React = require('react');
+var Products = require('Products');
 
 var Main = React.createClass({
     render: function () {
         return (
-            <h1>Main component</h1>
+            <div>
+                <h1>Main component</h1>
+                <Products />
+            </div>
         )
     }
 });

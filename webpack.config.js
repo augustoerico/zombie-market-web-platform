@@ -27,7 +27,9 @@ module.exports = {
             Main: path.resolve(__dirname, './app/components/Main.jsx'),
             Nav: path.resolve(__dirname, './app/components/Nav.jsx'),
             ProductList: path.resolve(__dirname, './app/components/ProductList.jsx'),
-            ProductForm: path.resolve(__dirname, './app/components/ProductForm.jsx')
+            ProductListState: path.resolve(__dirname, './app/components/ProductListState.jsx'),
+            ProductForm: path.resolve(__dirname, './app/components/ProductForm.jsx'),
+            ProductFormState: path.resolve(__dirname, './app/components/ProductFormState.jsx')
         },
         extensions: ['.js', '.jsx']
     },

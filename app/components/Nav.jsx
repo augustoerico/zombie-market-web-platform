@@ -6,18 +6,14 @@ var Nav = React.createClass({
         return (
             <div className="top-bar">
                 <div className="top-bar-left">
-                    <div className="menu">
-                        <div className="menu-text">
+                    <ul className="menu">
+                        <li className="menu-text">
                             <IndexLink to="/">Zombi-E-Market</IndexLink>
-                        </div>
-                    </div>
-                </div>
-                <div className="top-bar-center">
-                    <div className="menu">
-                        <div className="menu-text">
+                        </li>
+                        <li className="menu-text">
                             <input type="text" placeholder="Search for products"/>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
                 <div className="top-bar-right">
                     <ul className="menu">

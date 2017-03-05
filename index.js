@@ -2,7 +2,7 @@ var express = require('express');
 
  // create our app
 var app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // So we can deploy to Heroku
 app.use(function (req, res, next) {

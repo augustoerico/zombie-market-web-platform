@@ -2,9 +2,19 @@ var express = require('express');
 
  // create our app
 var app = express();
+const PORT = process.env.PORT || 3000;
+
+// So we can deploy to Heroku
+app.use(function (req, res, next) {
+  if (req.headers['x-forwarded-proto'] === 'https') {
+    res.redirect('http://' + req.hostname + req.url);
+  } else {
+    next();
+  }
+});
 
 app.use(express.static('public'));
 
-app.listen(3000, function () {
-  console.log('Express server is up and running on 3000 port');
+app.listen(PORT, function () {
+  console.log('Express server is up and running on port ' + PORT);
 })

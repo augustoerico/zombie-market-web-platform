@@ -1,30 +1,42 @@
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
-  entry: './app/app.jsx',
-  output: {
-    path: __dirname,
-    filename: './public/bundle.js'
-  },
-  resolve: {
-    // root: __dirname,
-    alias: {
-        Main: path.resolve(__dirname, './app/components/Main.jsx'),
-        Products: path.resolve(__dirname, './app/components/Products.jsx'),
-        ProductsView: path.resolve(__dirname, './app/components/ProductsView.jsx')
+    entry: [
+        'script-loader!jquery/dist/jquery.min.js',
+        'script-loader!foundation-sites/dist/js/foundation.min.js',
+        './app/app.jsx'
+    ],
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery'
+        })
+    ],
+    externals: {
+        jquery: 'jQuery'
     },
-    extensions: ['.js', '.jsx']
-  },
-  module: {
-    loaders: [
-      {
-        loader: 'babel-loader',
-        query: {
-          presets: ['react', 'es2015', 'stage-0']
+    output: {
+        path: __dirname,
+        filename: './public/bundle.js'
+    },
+    resolve: {
+        alias: {
+            applicationStyles: path.resolve(__dirname, './app/styles/app.scss')
         },
-        test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/
-      }
-    ]
-  }
+        extensions: ['.js', '.jsx']
+    },
+    module: {
+        loaders: [
+        {
+            loader: 'babel-loader',
+            query: {
+                presets: ['react', 'es2015', 'stage-0']
+            },
+            test: /\.jsx?$/,
+            exclude: /(node_modules|bower_components)/
+        }]
+    },
+    devtool: 'cheap-module-eval-source-map'
 };

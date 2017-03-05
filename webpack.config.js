@@ -24,6 +24,7 @@ module.exports = {
     resolve: {
         alias: {
             applicationStyles: path.resolve(__dirname, './app/styles/app.scss'),
+            productsApi: path.resolve(__dirname, './app/api/productsApi'),
             Main: path.resolve(__dirname, './app/components/Main.jsx'),
             Nav: path.resolve(__dirname, './app/components/Nav.jsx'),
             ProductList: path.resolve(__dirname, './app/components/ProductList.jsx'),

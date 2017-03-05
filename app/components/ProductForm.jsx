@@ -4,10 +4,10 @@ var ProductForm = React.createClass({
     render: function () {
         return (
             <div>
-                <h1>ProductForm</h1>
+                <h1 className="page-title">ProductForm</h1>
             </div>
         );
     }
 });
 
-module.export = ProductForm;
+module.exports = ProductForm;

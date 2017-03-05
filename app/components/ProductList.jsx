@@ -10,4 +10,4 @@ var ProductList = React.createClass({
     }
 });
 
-module.export = ProductList;
+module.exports = ProductList;

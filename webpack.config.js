@@ -23,7 +23,11 @@ module.exports = {
     },
     resolve: {
         alias: {
-            applicationStyles: path.resolve(__dirname, './app/styles/app.scss')
+            applicationStyles: path.resolve(__dirname, './app/styles/app.scss'),
+            Main: path.resolve(__dirname, './app/components/Main.jsx'),
+            Nav: path.resolve(__dirname, './app/components/Nav.jsx'),
+            ProductList: path.resolve(__dirname, './app/components/ProductList.jsx'),
+            ProductForm: path.resolve(__dirname, './app/components/ProductForm.jsx')
         },
         extensions: ['.js', '.jsx']
     },

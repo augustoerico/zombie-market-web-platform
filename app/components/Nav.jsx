@@ -10,9 +10,6 @@ var Nav = React.createClass({
                         <li className="menu-text">
                             <IndexLink to="/">Zombi-E-Market</IndexLink>
                         </li>
-                        <li className="menu-text">
-                            <input type="text" placeholder="Search for products"/>
-                        </li>
                     </ul>
                 </div>
                 <div className="top-bar-right">

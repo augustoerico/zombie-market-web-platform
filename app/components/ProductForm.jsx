@@ -16,13 +16,15 @@ var ProductForm = React.createClass({
     render: function () {
         return (
             <div>
-                <h1>Create a product</h1>
+                <h4 className="page-title">Create a product</h4>
                 <form ref="form" onSubmit={this.onSubmit}>
                     <input type="text" ref="name" placeholder="Product name"/>
                     <input type="number" ref="price" step="0.01" min="0" placeholder="Product price" />
-                    <input type="submit" value="Submit" />
+                    <div className="controls">
+                        <input className="button primary" type="submit" value="Submit" />
+                        <Link to="/" className="button alert hollow">Back</Link>
+                    </div>
                 </form>
-                <Link to="/">Back</Link>
             </div>
         );
     }

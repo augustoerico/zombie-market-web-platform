@@ -5,8 +5,14 @@ var ProductItem = React.createClass({
         var {name, price} = this.props;
         return (
             <li>
-                <p>{name}</p>
-                <p>Buy now for: ${price}</p>
+                <div className="row">
+                    <div className="column small-2 medium-6">
+                        <span>{name}</span>
+                    </div>
+                    <div className="column small-2 medium-6">
+                        <span>Buy now for: ${price}</span>
+                    </div>
+                </div>
             </li>
         );
     }

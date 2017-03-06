@@ -14,8 +14,13 @@ var ProductList = React.createClass({
     render: function () {
         return (
             <div>
-                {this.renderList()}
-                <Link to="/products">Add a product</Link>
+                <h4 className="page-title">Buy from us!</h4>
+                <ul className="menu vertical">
+                    {this.renderList()}
+                </ul>
+                <div className="controls">
+                    <Link to="/products" className="button expand primary">Add a product</Link>
+                </div>
             </div>
         );
     }

@@ -1,6 +1,7 @@
 var axios = require('axios');
 
-const PRODUCTS_API_URL = process.env.PRODUCTS_API_URL || 'http://localhost:3000';
+// const PRODUCTS_API_URL = process.env.PRODUCTS_API_URL || 'http://localhost:3000';
+const PRODUCTS_API_URL = 'https://zombie-market-products-api.herokuapp.com';
 
 module.exports = {
         listProducts: function () {

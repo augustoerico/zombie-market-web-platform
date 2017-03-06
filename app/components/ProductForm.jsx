@@ -1,4 +1,5 @@
 var React = require('react');
+var {Link} = require('react-router');
 
 // Requires a function as prop to handle (update state) submition
 var ProductForm = React.createClass({
@@ -22,6 +23,7 @@ var ProductForm = React.createClass({
                     <input type="number" ref="price" step="0.01" min="0" placeholder="Product price" />
                     <input type="submit" value="Submit" />
                 </form>
+                <Link to="/">Back</Link>
             </div>
         );
     }

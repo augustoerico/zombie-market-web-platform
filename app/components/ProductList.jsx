@@ -1,4 +1,5 @@
 var React = require('react');
+var {Link} = require('react-router');
 
 var ProductItem = require('ProductItem');
 var productsApi = require('productsApi');
@@ -14,6 +15,7 @@ var ProductList = React.createClass({
         return (
             <div>
                 {this.renderList()}
+                <Link to="/products">Add a product</Link>
             </div>
         );
     }

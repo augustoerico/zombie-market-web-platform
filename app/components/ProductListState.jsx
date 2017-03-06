@@ -6,25 +6,38 @@ var productsApi = require('productsApi');
 var ProductListState = React.createClass({
     getInitialState: function () {
         return {
-            products: []
+            products: [],
+            isLoading: true
         }
     },
     componentDidMount: function () {
         var that = this;
+        this.setState({isLoading: true});
         productsApi.listProducts().then(
             function (response) {
                 that.setState({
-                    products: response.data
+                    products: response.data,
+                    isLoading: false
                 });
             },
             function (error) {
                 alert('Sorry, something went wrong...');
+                that.setState({
+                    isLoading: false
+                });
             });
+    },
+    renderList: function () {
+        if (this.state.isLoading) {
+            return <span>Loading...</span>
+        } else {
+            return <ProductList products={this.state.products} />
+        }
     },
     render: function () {
         return (
             <div>
-                <ProductList products={this.state.products} />
+                {this.renderList()}
             </div>
         );
     }

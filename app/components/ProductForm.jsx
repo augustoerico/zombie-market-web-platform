@@ -1,7 +1,6 @@
 var React = require('react');
 var {Link} = require('react-router');
 
-// Requires a function as prop to handle (update state) submition
 var ProductForm = React.createClass({
     onSubmit: function (e) {
         e.preventDefault();
